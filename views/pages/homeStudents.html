@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" >
+    
+    		<title>Students Dashboard</title>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row profile">
+      <div class="col-md-3">
+        <div class="profile-sidebar">
+          <!-- SIDEBAR USERPIC -->
+          <div class="profile-userpic">
+            <img src="https://static.change.org/profile-img/default-user-profile.svg" class="img-responsive" alt="">
+          </div>
+          <!-- END SIDEBAR USERPIC -->
+          <!-- SIDEBAR USER TITLE -->
+          <div class="profile-usertitle">
+            <div class="profile-usertitle-name">
+              Students Name
+            </div>
+            <div class="profile-usertitle-job">
+              Year/Deg
+            </div>
+          </div>
+          <!-- END SIDEBAR USER TITLE -->
+          <!-- SIDEBAR BUTTONS -->
+          <div class="profile-userbuttons">
+            <button type="button" class="btn btn-danger btn-sm">Edit</button>
+          </div>
+          <!-- END SIDEBAR BUTTONS -->
+          <!-- SIDEBAR MENU -->
+          <div class="profile-usermenu">
+            <ul class="nav">
+              <li class="active" id="li1">
+                <a  onclick="switchDiv('profile');">
+                <i class="glyphicon glyphicon-user"></i>
+                Bio details </a>
+              </li>
+              <li id="li2">
+                <a onclick="switchDiv('bookmark');">
+                <i class="glyphicon glyphicon-bookmark"></i>
+                Bookmarks </a>
+              </li>
+              <li id="li3">
+                <a  onclick="switchDiv('project');">
+                <i class="glyphicon glyphicon-book"></i>
+                Projects </a>
+              </li>
+            <!--  <li>
+                <a href="#">
+                <i class="glyphicon glyphicon-flag"></i>
+                Help </a>
+              </li> -->
+            </ul>
+          </div>
+          <!-- END MENU -->
+        </div>
+      </div>
+      <div class="col-md-9">
+              <div class="profile-content" id="profile" style="display: none;">
+               user related content goes here.
+              </div>
+              <div class="profile-content" id="bookmark" style="display: none;">
+               
+               <table class="table table-striped table-bordered table-hover mydatatable subtable" style="width: 100%">
+                <thead>
+                  <tr>
+                    <th class="select-filter">Department</th>
+                    <th>Faculty name</th>
+                    <th>Project Title</th>
+                    <th>Keywords</th>
+                    <th>Bookmarks</th>
+                    <th>View More</th>
+                  </tr>
+                </thead>
+                </table>
+              </div>
+              <div class="profile-content" id="project" style="display: none;">
+                <div class=" bg-light text-right">
+                  <button type="button" class="btn btn-success" class="transferrows">Save Bookmarks</button>
+                </div>
+                <br>
+              <table class="table table-striped table-bordered  mydatatable maintable" style="width: 100%">
+                <thead>
+                  <tr>
+                    <th class="select-filter">Department</th>
+                    <th>Faculty name</th>
+                    <th>Project Title</th>
+                    <th>Keywords</th>
+                    <th>Bookmarks</th>
+                    <th>View More</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td>ABC</td>
+                      <td>lorem ipsum</td>
+                      <td>lorem ipsum</td>
+                      <td>lorem</td>
+                      <td><input type="checkbox">bookmark</td>
+                      <td><a href="#" data-toggle="modal" data-target="#mymodal">view more</a></td>
+                    </tr>
+                    <tr>
+                      <td>AabcBC</td>
+                      <td>lorem ipsum</td>
+                      <td>lorem ipsum</td>
+                      <td>lorem</td>
+                      <td><input type="checkbox">bookmark</td>
+                      <td><a href="#" data-toggle="modal" data-target="#mymodal">view more</a></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Department</th>
+                    <th>Faculty name</th>
+                    <th>Project Title</th>
+                    <th>Keywords</th>
+                    <th>Bookmarks</th>
+                    <th>View More</th>
+                  </tr>
+                </tfoot>
+              </table>
+              
+              </div>
+                   
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="profile-content" style="padding-top: 60px;">
+
+    <div class="modal" id="mymodal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class=" modal-header">
+            <button class="close" type="button" data-dismiss="modal">X</button>
+            <h1 class="modal-title">PROJECT NAME</h1>
+          </div>
+          <div class="modal-body">
+            <p>Dept name, project name, faculty name(hyperlink it to the nitt webpage) and keywords
+
+              1. full description
+              2. required skills/eligiblity 
+              3. Duration</p>
+              <div class=" border border-light bg-light text-center">
+                <a href="applyPage.html">
+                <button type="button" class="btn btn-danger">Apply</button>
+                </a>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+ 
+  <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> 
+<script>
+$('.mydatatable').DataTable({
+  initComplete: function() {
+    this.api().columns('.select-filter').every( function (){
+    var column = this;
+    var select = $('<select><option value=""></option></select>')
+    .appendTo( $(column.header() ).empty() )
+    .on( 'change' , function() {
+      var val = $.fn.dataTable.util.escapeRegex(
+        $(this).val()
+      );
+      column
+        .search( val ? '^'+val+'$' : '', true, false )
+        .draw();
+    });
+    column.data().unique().sort().each( function ( d, j ){
+      select.append( '<option value="'+d+'">'+d+'</option>')
+    });
+  });
+  }
+});
+
+$(function() {
+        $(document).on("click",".transferrows",function() {
+          var checkedrows=$(".maintable input:checked").parents("tr").clone().appendTo($(".subtable tbody").add(checkedrows));
+        })
+      })
+
+</script>
+  
+<script>
+  function switchDiv(id){
+    if (id=='profile' && document.getElementById('profile').style.display=="none") {
+  
+      document.getElementById('profile').style.display = 'block';
+      document.getElementById('bookmark').style.display = 'none';
+      document.getElementById('project').style.display = 'none';
+  
+  document.getElementById('li1').classList.add('active');
+  document.getElementById('li2').classList.remove('active');
+  document.getElementById('li3').classList.remove('active');
+      
+  
+  }
+  else if (id=='bookmark' && document.getElementById('bookmark').style.display =="none") {
+  
+  document.getElementById('profile').style.display = 'none';
+  document.getElementById('bookmark').style.display = 'block';
+  document.getElementById('project').style.display = 'none';
+  
+  document.getElementById('li1').classList.remove('active');
+  document.getElementById('li2').classList.add('active');
+  document.getElementById('li3').classList.remove('active');
+  
+  }
+  else if(id='project' && document.getElementById('project').style.display == "none"){
+  document.getElementById('profile').style.display = 'none';
+  document.getElementById('bookmark').style.display = 'none';
+  document.getElementById('project').style.display = 'block';
+  
+  document.getElementById('li1').classList.remove('active');
+  document.getElementById('li2').classList.remove('active');
+  document.getElementById('li3').classList.add('active');
+  }
+  }
+    </script>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+  </body>
+ 
+</html>
